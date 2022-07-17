@@ -40,13 +40,13 @@ runs:
         ref: "${{ inputs.ref }}"
         go-version: "${{ inputs.go-version }}"
         
-    - name: print env (generate builder)
+    - name: print pre-env (generate builder)
       run: echo "-------------------"
       
     - name: print env (generate builder)
       run: env
       
-    - name: print env (generate builder)
+    - name: print post-env (generate builder)
       run: echo "-------------------"
 
     - name: Generate builder
