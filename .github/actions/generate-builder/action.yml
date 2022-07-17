@@ -41,12 +41,15 @@ runs:
         go-version: "${{ inputs.go-version }}"
         
     - name: print pre-env (generate builder)
+      shell: bash
       run: echo "-------------------"
       
     - name: print env (generate builder)
+      shell: bash
       run: env
       
     - name: print post-env (generate builder)
+      shell: bash
       run: echo "-------------------"
 
     - name: Generate builder
