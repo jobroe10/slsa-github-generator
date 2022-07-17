@@ -93,7 +93,7 @@ jobs:
       - name: print env
         run: env
       - name: Generate builder
-        uses: root-de/slsa-github-generator/.github/actions/generate-builder@49e648aa7f5f4f88513b6cd54f6b189516184e6b
+        uses: root-de/slsa-github-generator/.github/actions/generate-builder@3a53ad1b1afa4cdd2a8590bb387a8400e443c0df
         with:
           repository: "${{ needs.detect-env.outputs.repository }}"
           ref: "${{ needs.detect-env.outputs.ref }}"
