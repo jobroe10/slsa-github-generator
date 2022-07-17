@@ -90,6 +90,8 @@ jobs:
       # packages:write permissions are needed to login and upload attestations.
       packages: write
     steps:
+      - name: print env
+        run: env
       - name: Generate builder
         uses: root-de/slsa-github-generator/.github/actions/generate-builder@49e648aa7f5f4f88513b6cd54f6b189516184e6b
         with:
