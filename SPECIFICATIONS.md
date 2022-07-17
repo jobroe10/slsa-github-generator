@@ -166,7 +166,7 @@ jobs:
       id-token: write
       contents: read
     needs: args
-    uses: slsa-framework/slsa-github-generator-go/.github/workflows/builder.yml@<somehash>
+    uses: root-de/slsa-github-generator-go/.github/workflows/builder.yml@<somehash>
     with:
       go-version: 1.17
 
@@ -234,7 +234,7 @@ verified SLSA provenance produced at
  {
         "caller": "asraa/slsa-on-github-test",
         "commit": "0dfcd24824432c4ce587f79c918eef8fc2c44d7b",
-        "job_workflow_ref": "/slsa-framework/slsa-github-generator-go/.github/workflows/builder.yml@refs/heads/main",
+        "job_workflow_ref": "/root-de/slsa-github-generator-go/.github/workflows/builder.yml@refs/heads/main",
         "trigger": "workflow_dispatch",
         "issuer": "https://token.actions.githubusercontent.com"
 }

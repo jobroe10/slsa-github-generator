@@ -7,7 +7,7 @@ Although the Actions are hosted on the same repository, we consider them "extern
 
 but instead via their "fully-qualified" name:
 
-```slsa-framework/slsa-github-generator/.github/actions/name@hash```. 
+```root-de/slsa-github-generator/.github/actions/name@hash```. 
 
 We do this because the Actions are part of the builder, whereas the workflow runs in the "context" of the calling repository.
 
@@ -35,7 +35,7 @@ the existing code will still be calling the Action at an older commit hash).
 
 1. Update the re-usable workflow / Actions to use them in a follow-up PR:
 ```yaml
-uses: slsa-framework/slsa-github-generator/.github/actions/<your-action>@CH
+uses: root-de/slsa-github-generator/.github/actions/<your-action>@CH
 ```
 
   You can update using the following command:

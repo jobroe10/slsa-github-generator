@@ -34,7 +34,7 @@ runs:
   using: "composite"
   steps:
     - name: Checkout the Go builder repository
-      uses: slsa-framework/slsa-github-generator/.github/actions/checkout-go@1d646d70aeba1516af69fb0ef48206580122449b
+      uses: root-de/slsa-github-generator/.github/actions/checkout-go@1d646d70aeba1516af69fb0ef48206580122449b
       with:
         repository: "${{ inputs.repository }}"
         ref: "${{ inputs.ref }}"
@@ -44,7 +44,7 @@ runs:
       shell: bash
       env:
         # Builder.
-        BUILDER_REPOSITORY: slsa-framework/slsa-github-generator  # The repository to download the pre-built builder binary from.
+        BUILDER_REPOSITORY: root-de/slsa-github-generator  # The repository to download the pre-built builder binary from.
         BUILDER_RELEASE_BINARY: "${{ inputs.binary }}"            # The name of the pre-built binary in the release assets. This is also used as the final binary name when compiling the builder from source.
         # Verifier
         # NOTE: These VERIFIER_* variables are used in the builder-fetch.sh script for verification of builder
@@ -62,7 +62,7 @@ runs:
       run: ./.github/actions/generate-builder/generate-builder.sh
 
     - name: Compute sha256 of builder
-      uses: slsa-framework/slsa-github-generator/.github/actions/compute-sha256@1d646d70aeba1516af69fb0ef48206580122449b
+      uses: root-de/slsa-github-generator/.github/actions/compute-sha256@1d646d70aeba1516af69fb0ef48206580122449b
       id: compute
       with:
         path: "${{ inputs.binary }}"

@@ -28,7 +28,7 @@ e2e_verify_common_all "$ATTESTATION"
 
 # Verify the subject and build type
 e2e_verify_predicate_subject_name "$ATTESTATION" "$BINARY"
-e2e_verify_predicate_buildType "$ATTESTATION" "https://github.com/slsa-framework/slsa-github-generator/go@v1"
+e2e_verify_predicate_buildType "$ATTESTATION" "https://github.com/root-de/slsa-github-generator/go@v1"
 
 # Verify extra invocation environment.
 e2e_verify_predicate_invocation_environment "$ATTESTATION" "os" "ubuntu20"

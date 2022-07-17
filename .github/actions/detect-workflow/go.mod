@@ -1,8 +1,8 @@
-module github.com/slsa-framework/slsa-github-generator/.github/actions/detect-workflow
+module github.com/root-de/slsa-github-generator/.github/actions/detect-workflow
 
 go 1.18
 
-require github.com/slsa-framework/slsa-github-generator v1.1.1
+require github.com/root-de/slsa-github-generator v1.1.1
 
 require (
 	github.com/coreos/go-oidc v2.2.1+incompatible // indirect

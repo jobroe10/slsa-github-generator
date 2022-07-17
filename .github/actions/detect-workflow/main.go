@@ -24,7 +24,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/slsa-framework/slsa-github-generator/github"
+	"github.com/root-de/slsa-github-generator/github"
 )
 
 type action struct {
@@ -33,7 +33,7 @@ type action struct {
 	getClient func() (*github.OIDCClient, error)
 }
 
-// TODO(github.com/slsa-framework/slsa-github-generator/issues/164): use the github context via the shared library
+// TODO(github.com/root-de/slsa-github-generator/issues/164): use the github context via the shared library
 
 func newAction(getenv func(string) string, getClient func() (*github.OIDCClient, error)) (*action, error) {
 	eventPath := getenv("GITHUB_EVENT_PATH")
@@ -94,7 +94,7 @@ func (a *action) getEventValue(key string) string {
 func (a *action) getRepoRef(ctx context.Context) (string, string, error) {
 	var repository, ref string
 
-	// TODO(github.com/slsa-framework/slsa-github-generator/issues/124): Remove special logic for pull_requests.
+	// TODO(github.com/root-de/slsa-github-generator/issues/124): Remove special logic for pull_requests.
 	eventName := a.getenv("GITHUB_EVENT_NAME")
 	if eventName == "pull_request" {
 		// If a pull request get the repo from the pull request.

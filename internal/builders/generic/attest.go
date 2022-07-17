@@ -30,11 +30,11 @@ import (
 	slsav02 "github.com/in-toto/in-toto-golang/in_toto/slsa_provenance/v0.2"
 	"github.com/spf13/cobra"
 
-	"github.com/slsa-framework/slsa-github-generator/github"
-	"github.com/slsa-framework/slsa-github-generator/internal/errors"
-	"github.com/slsa-framework/slsa-github-generator/internal/utils"
-	"github.com/slsa-framework/slsa-github-generator/signing/sigstore"
-	"github.com/slsa-framework/slsa-github-generator/slsa"
+	"github.com/root-de/slsa-github-generator/github"
+	"github.com/root-de/slsa-github-generator/internal/errors"
+	"github.com/root-de/slsa-github-generator/internal/utils"
+	"github.com/root-de/slsa-github-generator/signing/sigstore"
+	"github.com/root-de/slsa-github-generator/slsa"
 )
 
 var (
@@ -46,7 +46,7 @@ var (
 	wsSplit = regexp.MustCompile(`[\t ]`)
 
 	// provenanceOnlyBuildType is the URI for provenance only SLSA generation.
-	provenanceOnlyBuildType = "https://github.com/slsa-framework/slsa-github-generator@v1"
+	provenanceOnlyBuildType = "https://github.com/root-de/slsa-github-generator@v1"
 )
 
 // errBase64 indicates a base64 error in the subject.
@@ -222,13 +222,13 @@ run in the context of a Github Actions workflow.`,
 			b := provenanceOnlyBuild{
 				GithubActionsBuild: slsa.NewGithubActionsBuild(parsedSubjects, ghContext),
 			}
-			// TODO(github.com/slsa-framework/slsa-github-generator/issues/124): Remove
+			// TODO(github.com/root-de/slsa-github-generator/issues/124): Remove
 			if utils.IsPresubmitTests() {
 				b.WithClients(&slsa.NilClientProvider{})
 			}
 
 			g := slsa.NewHostedActionsGenerator(&b)
-			// TODO(github.com/slsa-framework/slsa-github-generator/issues/124): Remove
+			// TODO(github.com/root-de/slsa-github-generator/issues/124): Remove
 			if utils.IsPresubmitTests() {
 				g.WithClients(&slsa.NilClientProvider{})
 			}

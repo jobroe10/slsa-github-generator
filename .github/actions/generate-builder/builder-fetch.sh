@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # Caller sets the following:
-#BUILDER_REPOSITORY="slsa-framework/slsa-github-generator"
+#BUILDER_REPOSITORY="root-de/slsa-github-generator"
 #BUILDER_TAG="v13.0.10" or "6a1e642a8689671a2cec9287149eb50bd9fe5ef6"
 #BUILDER_RELEASE_BINARY="builder-linux-amd64"
 #VERIFIER_REPOSITORY="slsa-framework/slsa-verifier"
@@ -53,7 +53,7 @@ fi
 
 if [[ "$BUILDER_TAG" != "$(echo -n "$BUILDER_TAG" | grep -P '^v\d*(\.([\d]{1,})){0,2}$')" ]]; then
     echo "Invalid builder version: $BUILDER_TAG. Expected version of the form vX.Y.Z"
-    echo "For details see https://github.com/slsa-framework/slsa-github-generator#verification-of-provenance"
+    echo "For details see https://github.com/root-de/slsa-github-generator#verification-of-provenance"
     exit 7
 fi
 

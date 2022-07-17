@@ -25,12 +25,12 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/slsa-framework/slsa-github-generator/signing/sigstore"
+	"github.com/root-de/slsa-github-generator/signing/sigstore"
 
 	// Enable the GitHub OIDC auth provider.
 	_ "github.com/sigstore/cosign/pkg/providers/github"
 
-	"github.com/slsa-framework/slsa-github-generator/internal/builders/go/pkg"
+	"github.com/root-de/slsa-github-generator/internal/builders/go/pkg"
 )
 
 func usage(p string) {

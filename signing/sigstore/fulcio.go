@@ -24,8 +24,8 @@ import (
 	"github.com/sigstore/cosign/cmd/cosign/cli/options"
 	"github.com/sigstore/cosign/pkg/providers"
 	"github.com/sigstore/sigstore/pkg/signature/dsse"
-	"github.com/slsa-framework/slsa-github-generator/signing"
-	"github.com/slsa-framework/slsa-github-generator/signing/envelope"
+	"github.com/root-de/slsa-github-generator/signing"
+	"github.com/root-de/slsa-github-generator/signing/envelope"
 
 	intoto "github.com/in-toto/in-toto-golang/in_toto"
 )

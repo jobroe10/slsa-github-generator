@@ -8,7 +8,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 	intoto "github.com/in-toto/in-toto-golang/in_toto"
 	slsa "github.com/in-toto/in-toto-golang/in_toto/slsa_provenance/v0.2"
-	"github.com/slsa-framework/slsa-github-generator/github"
+	"github.com/root-de/slsa-github-generator/github"
 )
 
 var (

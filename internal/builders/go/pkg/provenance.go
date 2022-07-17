@@ -20,18 +20,18 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/slsa-framework/slsa-github-generator/signing"
+	"github.com/root-de/slsa-github-generator/signing"
 
 	intoto "github.com/in-toto/in-toto-golang/in_toto"
 	slsa02 "github.com/in-toto/in-toto-golang/in_toto/slsa_provenance/v0.2"
-	"github.com/slsa-framework/slsa-github-generator/github"
-	"github.com/slsa-framework/slsa-github-generator/internal/utils"
-	"github.com/slsa-framework/slsa-github-generator/slsa"
+	"github.com/root-de/slsa-github-generator/github"
+	"github.com/root-de/slsa-github-generator/internal/utils"
+	"github.com/root-de/slsa-github-generator/slsa"
 )
 
 const (
 	buildConfigVersion int = 1
-	buildType              = "https://github.com/slsa-framework/slsa-github-generator/go@v1"
+	buildType              = "https://github.com/root-de/slsa-github-generator/go@v1"
 )
 
 type (
