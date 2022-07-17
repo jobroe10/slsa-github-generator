@@ -140,11 +140,16 @@ jobs:
           predicate_name="predicate.json"
           echo $(echo $(echo $UNTRUSTED_DIGEST | cut -d: -f2) $UNTRUSTED_IMAGE) | base64
           ./"$BUILDER_RELEASE_BINARY" attest --subjects $(echo $(echo $(echo $UNTRUSTED_DIGEST | cut -d: -f2) $UNTRUSTED_IMAGE) | base64 -w0) --predicate="$predicate_name"
-          cat predicate.json
           ls
           COSIGN_EXPERIMENTAL=1 cosign attest --predicate="$predicate_name" \
             --type slsaprovenance \
             --force \
             "${UNTRUSTED_IMAGE}"
+          echo "predicate.json:"
           cat predicate.json
+          echo "renovate.json:"
+          cat renovate.json
+          echo "attestation.intoto.jsonl:"
+          cat attestation.intoto.jsonl
+          
 
