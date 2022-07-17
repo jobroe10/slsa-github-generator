@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
+ls
+pwd
 
 if [[ "$COMPILE_BUILDER" = true ]]; then
     echo "Building the builder"
@@ -11,7 +13,8 @@ if [[ "$COMPILE_BUILDER" = true ]]; then
 
     # https://go.dev/ref/mod#build-commands.
     go build -mod=vendor -o "$BUILDER_RELEASE_BINARY"
-
+    ls
+    pwd
     cd -
 
     mv "$BUILDER_DIR/$BUILDER_RELEASE_BINARY" .
@@ -24,3 +27,5 @@ else
 fi
 
 chmod u+x "$BUILDER_RELEASE_BINARY"
+ls
+pwd
