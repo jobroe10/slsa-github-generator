@@ -151,5 +151,7 @@ jobs:
           cat renovate.json
           echo "attestation.intoto.jsonl:"
           cat attestation.intoto.jsonl
+          ls
+          pwd
           
 
