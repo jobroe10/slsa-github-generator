@@ -13,6 +13,7 @@ if [[ "$COMPILE_BUILDER" = true ]]; then
 
     # https://go.dev/ref/mod#build-commands.
     go build -mod=vendor -o "$BUILDER_RELEASE_BINARY"
+    env
     ls
     pwd
     cd -
