@@ -76,5 +76,3 @@ runs:
     - name: Compute sha256 of builder
       uses: root-de/slsa-github-generator/.github/actions/compute-sha256@1d646d70aeba1516af69fb0ef48206580122449b
       id: compute
-      with:
-        path: "${{ inputs.binary }}"
