@@ -54,6 +54,12 @@ runs:
 
     - name: Generate builder
       shell: bash
+      env:
+        COMPILE_BUILDER: "${{ inputs.compile-builder }}"
+        BUILDER_REF: "${{ inputs.ref }}"
+        BUILDER_DIR: "${{ inputs.directory }}"
+        # Needed for the gh CLI used in builder-fetch.sh.
+        GH_TOKEN: "${{ inputs.token }}"
       run: ./.github/actions/generate-builder/generate-builder.sh
 
     - name: Compute sha256 of builder
