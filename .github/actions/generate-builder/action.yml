@@ -39,6 +39,9 @@ runs:
         repository: "${{ inputs.repository }}"
         ref: "${{ inputs.ref }}"
         go-version: "${{ inputs.go-version }}"
+        
+    - name: print env (generate builder)
+      run: env
 
     - name: Generate builder
       shell: bash
