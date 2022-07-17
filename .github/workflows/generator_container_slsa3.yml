@@ -154,10 +154,8 @@ jobs:
           ls
           pwd
       
-      - name: upload folder
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact
-          path: /home/runner/work/Example-Image/Example-Image
-
-
+#       - name: upload folder
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: my-artifact
+#           path: /home/runner/work/Example-Image/Example-Image
