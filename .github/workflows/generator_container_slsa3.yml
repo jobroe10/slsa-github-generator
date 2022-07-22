@@ -153,7 +153,7 @@ jobs:
           cat attestation.intoto.jsonl
           ls
           pwd
-          COSIGN_EXPERIMENTAL=1 cosign verify-attestation ghcr.io/jobroe10/example-image:v0.1.9 -d
+          COSIGN_EXPERIMENTAL=1 cosign verify-attestation ghcr.io/root-de/example-image:sha256-a62ffe7fd36a7ca1962713cd01c2863de9a567b62d3809299ca347cd7f37776b.att -d
       
 #       - name: upload folder
 #         uses: actions/upload-artifact@v3
