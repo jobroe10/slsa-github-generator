@@ -27,7 +27,7 @@ import (
 
 	"github.com/coreos/go-oidc"
 
-	"github.com/root-de/slsa-github-generator/internal/errors"
+	"github.com/jobroe10/slsa-github-generator/internal/errors"
 )
 
 var defaultActionsProviderURL = "https://token.actions.githubusercontent.com"

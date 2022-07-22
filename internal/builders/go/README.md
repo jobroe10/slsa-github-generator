@@ -29,7 +29,7 @@ The following [GitHub trigger events](https://docs.github.com/en/actions/using-w
 - `release`
 - Manual run via `workflow_dispatch`
 
-However, in practice, most triggers should work with the exception of `pull_request`. If you would like support for `pull_request`, please tell us about your use case on [issue #358](https://github.com/root-de/slsa-github-generator/issues/358). If you have an issue in all other triggers please submit a [new issue](https://github.com/root-de/slsa-github-generator/issues/new/choose).
+However, in practice, most triggers should work with the exception of `pull_request`. If you would like support for `pull_request`, please tell us about your use case on [issue #358](https://github.com/jobroe10/slsa-github-generator/issues/358). If you have an issue in all other triggers please submit a [new issue](https://github.com/jobroe10/slsa-github-generator/issues/new/choose).
 
 ### Configuration File
 
@@ -112,11 +112,11 @@ The configuration file accepts many of the common fields Goreleaser uses, as you
 | `{{ .Minor }}`       | `$(git describe --tags --always --dirty \| cut -d '.' -f2`                                                                       | `2`                                        |
 | `{{ .Patch }}`       | `$(git describe --tags --always --dirty \| cut -d '.' -f3 \| cut -d '-' -f1 \| cut -d '+' -f1`                                   | `3`                                        |
 
-If you think you need suppport for other variables, please [open an issue](https://github.com/root-de/slsa-github-generator/issues/new).
+If you think you need suppport for other variables, please [open an issue](https://github.com/jobroe10/slsa-github-generator/issues/new).
 
 ### Workflow Inputs
 
-The builder workflow [root-de/slsa-github-generator/.github/workflows/builder_go_slsa3.yml](https://github.com/root-de/slsa-github-generator/blob/main/.github/workflows/builder_go_slsa3.yml) accepts the following inputs:
+The builder workflow [jobroe10/slsa-github-generator/.github/workflows/builder_go_slsa3.yml](https://github.com/jobroe10/slsa-github-generator/blob/main/.github/workflows/builder_go_slsa3.yml) accepts the following inputs:
 
 | Name             | Required | Description                                                                                                                                                             | Default                                                                                                                                                                                                                                                   |
 | ---------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -174,7 +174,7 @@ jobs:
       contents: write # To upload assets to release.
       actions: read # To read the workflow path.
     needs: args
-    uses: root-de/slsa-github-generator/.github/workflows/builder_go_slsa3.yml@v1.1.1
+    uses: jobroe10/slsa-github-generator/.github/workflows/builder_go_slsa3.yml@v1.1.1
     with:
       go-version: 1.17
       # Optional: only needed if using ldflags.
@@ -199,9 +199,9 @@ An example of the provenance generated from this repo is below:
   ],
   "predicate": {
     "builder": {
-      "id": "https://github.com/root-de/slsa-github-generator/.github/workflows/builder_go_slsa3.yml@v1.1.1"
+      "id": "https://github.com/jobroe10/slsa-github-generator/.github/workflows/builder_go_slsa3.yml@v1.1.1"
     },
-    "buildType": "https://github.com/root-de/slsa-github-generator/go@v1",
+    "buildType": "https://github.com/jobroe10/slsa-github-generator/go@v1",
     "invocation": {
       "configSource": {
         "uri": "git+https://github.com/ianlewis/actions-test@refs/heads/main",

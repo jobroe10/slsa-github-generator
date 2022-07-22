@@ -19,7 +19,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/root-de/slsa-github-generator/github"
+	"github.com/jobroe10/slsa-github-generator/github"
 )
 
 func Test_action_getEventValue(t *testing.T) {

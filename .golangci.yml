@@ -84,7 +84,7 @@ linters-settings:
     sections:
       - standard
       - default
-      - prefix(github.com/root-de/slsa-github-generator)
+      - prefix(github.com/jobroe10/slsa-github-generator)
   gocritic:
     enabled-checks:
       # Diagnostic

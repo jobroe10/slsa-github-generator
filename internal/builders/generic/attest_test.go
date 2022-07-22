@@ -8,7 +8,7 @@ import (
 	intoto "github.com/in-toto/in-toto-golang/in_toto"
 	slsav02 "github.com/in-toto/in-toto-golang/in_toto/slsa_provenance/v0.2"
 
-	"github.com/root-de/slsa-github-generator/internal/errors"
+	"github.com/jobroe10/slsa-github-generator/internal/errors"
 )
 
 func Test_pathIsUnderCurrentDirectory(t *testing.T) {

@@ -78,7 +78,7 @@ provenance:
     actions: read # Needed for detection of GitHub Actions environment.
     id-token: write # Needed for provenance signing and ID
     contents: read # Needed for API access
-  uses: root-de/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.1.1
+  uses: jobroe10/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.1.1
   with:
     base64-subjects: "${{ needs.build.outputs.hashes }}"
 ```
@@ -132,7 +132,7 @@ jobs:
       actions: read
       id-token: write
       contents: read
-    uses: root-de/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.1.1
+    uses: jobroe10/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.1.1
     with:
       base64-subjects: "${{ needs.build.outputs.hashes }}"
       # Upload provenance to a new release
@@ -173,13 +173,13 @@ The following [GitHub trigger events](https://docs.github.com/en/actions/using-w
 
 However, in practice, most triggers should work with the exception of
 `pull_request`. If you would like support for `pull_request`, please tell us
-about your use case on [issue #358](https://github.com/root-de/slsa-github-generator/issues/358). If
+about your use case on [issue #358](https://github.com/jobroe10/slsa-github-generator/issues/358). If
 you have an issue in all other triggers please submit a [new
-issue](https://github.com/root-de/slsa-github-generator/issues/new/choose).
+issue](https://github.com/jobroe10/slsa-github-generator/issues/new/choose).
 
 ### Workflow Inputs
 
-The [generic workflow](https://github.com/root-de/slsa-github-generator/blob/main/.github/workflows/generator_generic_slsa3.yml) accepts the following inputs:
+The [generic workflow](https://github.com/jobroe10/slsa-github-generator/blob/main/.github/workflows/generator_generic_slsa3.yml) accepts the following inputs:
 
 
 | Name              | Required | Default | Description                                                                                                                                                                                                                                                      |
@@ -190,7 +190,7 @@ The [generic workflow](https://github.com/root-de/slsa-github-generator/blob/mai
 
 ### Workflow Outputs
 
-The [generic workflow](https://github.com/root-de/slsa-github-generator/blob/main/.github/workflows/generator_generic_slsa3.yml) produces the following outputs:
+The [generic workflow](https://github.com/jobroe10/slsa-github-generator/blob/main/.github/workflows/generator_generic_slsa3.yml) produces the following outputs:
 
 | Name               | Description                                |
 |--------------------|--------------------------------------------|
@@ -202,7 +202,7 @@ The project generates SLSA provenance with the following values.
 
 | Name                         | Value                                                          | Description                                                                                                                                                                                                            |
 |------------------------------|----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `buildType`                  | `"https://github.com/root-de/slsa-github-generator@v1"` | Identifies a generic GitHub Actions build.                                                                                                                                                                             |
+| `buildType`                  | `"https://github.com/jobroe10/slsa-github-generator@v1"` | Identifies a generic GitHub Actions build.                                                                                                                                                                             |
 | `metadata.buildInvocationID` | `"[run_id]-[run_attempt]"`                                     | The GitHub Actions [`run_id`](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context) does not update when a workflow is re-run. Run attempt is added to make the build invocation ID unique. |
 
 ### Provenance Example
@@ -224,9 +224,9 @@ generated as an [in-toto](https://in-toto.io/) statement with a SLSA predicate.
   ],
   "predicate": {
     "builder": {
-      "id": "https://github.com/root-de/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@refs/tags/v1.1.1"
+      "id": "https://github.com/jobroe10/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@refs/tags/v1.1.1"
     },
-    "buildType": "https://github.com/root-de/slsa-github-generator@v1",
+    "buildType": "https://github.com/jobroe10/slsa-github-generator@v1",
     "invocation": {
       "configSource": {
         "uri": "git+https://github.com/ianlewis/actions-test@refs/heads/main.git",
@@ -337,7 +337,7 @@ jobs:
       actions: read
       id-token: write
       contents: read
-    uses: root-de/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.1.1
+    uses: jobroe10/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.1.1
     with:
       base64-subjects: "${{ needs.goreleaser.outputs.hashes }}"
       upload-assets: true # upload to a new release
@@ -416,7 +416,7 @@ jobs:
       actions: read
       id-token: write
       contents: read
-    uses: root-de/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.1.1
+    uses: jobroe10/slsa-github-generator/.github/workflows/generator_generic_slsa3.yml@v1.1.1
     with:
       base64-subjects: "${{ needs.build.outputs.hashes }}"
       upload-assets: true # upload to a new release

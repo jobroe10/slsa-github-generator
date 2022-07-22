@@ -19,7 +19,7 @@ Set up env variables:
 ```
 $ export GH_TOKEN=<PAT-token>
 $ export GITHUB_USERNAME="laurentsimon"
-# This is the existing slsa-verifier version used by the builder. (https://github.com/root-de/slsa-github-generator/blob/release/bad-verifier/.github/actions/generate-builder/action.yml#L54)
+# This is the existing slsa-verifier version used by the builder. (https://github.com/jobroe10/slsa-github-generator/blob/release/bad-verifier/.github/actions/generate-builder/action.yml#L54)
 $ export VERIFIER_TAG="v0.0.1" 
 $ export VERIFIER_REPOSITORY="$GITHUB_USERNAME/slsa-verifier"
 # Release tag of the builder we want to release
@@ -67,7 +67,7 @@ Error: Process completed with exit code 4.
 
 ## Tagging
 
-Create a new tag for the official generator via [root-de/slsa-github-generator/releases/new](https://github.com/root-de/slsa-github-generator/releases/new). 
+Create a new tag for the official generator via [jobroe10/slsa-github-generator/releases/new](https://github.com/jobroe10/slsa-github-generator/releases/new). 
 The tag *MUST* be a "canonical" semantic version without metadata (`$BUILDER_TAG`). Shorter versions are not accepted by the builder's and verifier's code. 
 
 Set the title to `$BUILDER_TAG`.
@@ -78,7 +78,7 @@ Click `Publish release`.
 
 Download the generated binary `slsa-builder-go-linux-amd64` locally on your machine:
 ```
-$ "$GH" release -R root-de/slsa-github-generator download "$BUILDER_TAG" -p "slsa-builder-go-linux-amd64"
+$ "$GH" release -R jobroe10/slsa-github-generator download "$BUILDER_TAG" -p "slsa-builder-go-linux-amd64"
 ```
 
 ## Post-release tests
@@ -88,13 +88,13 @@ End-to-end tests run daily in [github.com/slsa-framework/example-package/.github
 For this:
 1. Make sure you have downloaded the `$BUILDER_TAG` builder's binary locally `slsa-builder-go-linux-amd64`, either via the web UI or via:
 ```
-$ "$GH" release -R root-de/slsa-github-generator download "$BUILDER_TAG" -p "slsa-builder-go-linux-amd64"
+$ "$GH" release -R jobroe10/slsa-github-generator download "$BUILDER_TAG" -p "slsa-builder-go-linux-amd64"
 $ mv slsa-builder-go-linux-amd64 slsa-builder-go-linux-amd64-"$BUILDER_TAG".original
 ```
 2. Upload a different binary to the assets:
 ```
 $ echo hello > slsa-builder-go-linux-amd64
-$ "$GH" release -R root-de/slsa-github-generator upload "$BUILDER_TAG" slsa-builder-go-linux-amd64  --clobber
+$ "$GH" release -R jobroe10/slsa-github-generator upload "$BUILDER_TAG" slsa-builder-go-linux-amd64  --clobber
 ```
 3. Update the version of the workflow [slsa-framework/example-package/.github/workflows/e2e.go.workflow_dispatch.main.adversarial-builder-binary.slsa3.yml#L14](https://github.com/slsa-framework/example-package/blob/main/.github/workflows/e2e.go.workflow_dispatch.main.adversarial-builder-binary.slsa3.yml#L14) with the `$BUILDER_TAG` to test.
 4. Trigger the test in [slsa-framework/example-package/actions/workflows/e2e.go.workflow_dispatch.main.adversarial-builder-binary.slsa3.yml](https://github.com/slsa-framework/example-package/actions/workflows/e2e.go.workflow_dispatch.main.adversarial-builder-binary.slsa3.yml) by cliking `Run workflow`. Verify that it fails, with a message:
@@ -111,10 +111,10 @@ If it does not, delete the release, fix the bug and re-start the release process
 4. If the test above failed with the expected message, re-upload the original binary back to the assets, e.g. via:
 ```
 $ mv slsa-builder-go-linux-amd64-"$BUILDER_TAG".original slsa-builder-go-linux-amd64
-$ "$GH" release -R root-de/slsa-github-generator upload "$BUILDER_TAG" slsa-builder-go-linux-amd64  --clobber
+$ "$GH" release -R jobroe10/slsa-github-generator upload "$BUILDER_TAG" slsa-builder-go-linux-amd64  --clobber
 ```
 
-5. Re-run the workflow above and verify that it succeeds. (TODO: https://github.com/root-de/slsa-github-generator/issues/116).
+5. Re-run the workflow above and verify that it succeeds. (TODO: https://github.com/jobroe10/slsa-github-generator/issues/116).
 
 ## Update verifier
 
@@ -142,7 +142,7 @@ That's it!
 
 ## Update the starter workflow
 
-TODO: https://github.com/root-de/slsa-github-generator/issues/97
+TODO: https://github.com/jobroe10/slsa-github-generator/issues/97
 
 ## Announce
 

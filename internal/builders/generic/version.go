@@ -19,7 +19,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/root-de/slsa-github-generator/version"
+	"github.com/jobroe10/slsa-github-generator/version"
 )
 
 func versionCmd() *cobra.Command {

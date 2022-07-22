@@ -8,7 +8,7 @@ import (
 	"github.com/sigstore/cosign/pkg/cosign"
 	"github.com/sigstore/rekor/pkg/generated/client/entries"
 	"github.com/sigstore/rekor/pkg/generated/models"
-	"github.com/root-de/slsa-github-generator/signing"
+	"github.com/jobroe10/slsa-github-generator/signing"
 )
 
 const (

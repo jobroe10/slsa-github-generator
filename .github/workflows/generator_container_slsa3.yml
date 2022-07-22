@@ -18,7 +18,7 @@ env:
   # Generator
   BUILDER_BINARY: generic-generator
   BUILDER_RELEASE_BINARY: slsa-generator-generic-linux-amd64
-  BUILDER_REPOSITORY: root-de/slsa-github-generator
+  BUILDER_REPOSITORY: jobroe10/slsa-github-generator
   # Verifier
   # NOTE: These VERIFIER_* variables are used for verification of generator
   # release binaries when the compile-generator input is false.
@@ -67,7 +67,7 @@ jobs:
     steps:
       - name: Detect the generator ref
         id: detect
-        uses: root-de/slsa-github-generator/.github/actions/detect-workflow@49e648aa7f5f4f88513b6cd54f6b189516184e6b
+        uses: jobroe10/slsa-github-generator/.github/actions/detect-workflow@49e648aa7f5f4f88513b6cd54f6b189516184e6b
 
   # generator builds the generator binary and runs it to generate SLSA
   # provenance.
@@ -93,7 +93,7 @@ jobs:
       - name: print env
         run: env
       - name: Generate builder
-        uses: root-de/slsa-github-generator/.github/actions/generate-builder@main
+        uses: jobroe10/slsa-github-generator/.github/actions/generate-builder@main
         with:
           repository: "${{ needs.detect-env.outputs.repository }}"
           ref: "${{ needs.detect-env.outputs.ref }}"
@@ -153,7 +153,7 @@ jobs:
           cat attestation.intoto.jsonl
           ls
           pwd
-          COSIGN_EXPERIMENTAL=1 cosign verify-attestation ghcr.io/root-de/example-image:v.0.1.34 -d
+          COSIGN_EXPERIMENTAL=1 cosign verify-attestation ghcr.io/jobroe10/example-image:v.0.1.34 -d
       
 #       - name: upload folder
 #         uses: actions/upload-artifact@v3

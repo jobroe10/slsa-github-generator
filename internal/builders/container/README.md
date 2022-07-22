@@ -59,12 +59,12 @@ provenance:
     id-token: write # for creating OCID tokens for signing.
     packages: write # for uploading attestations.
   if: startsWith(github.ref, 'refs/tags/')
-  # TODO(https://github.com/root-de/slsa-github-generator/issues/492): Use a tagged release once we have one.
-  uses: root-de/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@main
+  # TODO(https://github.com/jobroe10/slsa-github-generator/issues/492): Use a tagged release once we have one.
+  uses: jobroe10/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@main
   with:
     image: ${{ needs.build.outputs.tag }}
     registry-username: ${{ github.actor }}
-    # TODO(https://github.com/root-de/slsa-github-generator/issues/492): Remove after GA release.
+    # TODO(https://github.com/jobroe10/slsa-github-generator/issues/492): Remove after GA release.
     compile-generator: true
   secrets:
     registry-password: ${{ secrets.GITHUB_TOKEN }}
@@ -131,11 +131,11 @@ jobs:
       id-token: write # for creating OCID tokens for signing.
       packages: write # for uploading attestations.
     if: startsWith(github.ref, 'refs/tags/')
-    uses: root-de/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@main
+    uses: jobroe10/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@main
     with:
       image: ${{ needs.build.outputs.image }}
       registry-username: ${{ github.actor }}
-      # TODO(https://github.com/root-de/slsa-github-generator/issues/492): Remove after GA release.
+      # TODO(https://github.com/jobroe10/slsa-github-generator/issues/492): Remove after GA release.
       compile-generator: true
     secrets:
       registry-password: ${{ secrets.GITHUB_TOKEN }}
@@ -152,13 +152,13 @@ The following [GitHub trigger events](https://docs.github.com/en/actions/using-w
 
 However, in practice, most triggers should work with the exception of
 `pull_request`. If you would like support for `pull_request`, please tell us
-about your use case on [issue #358](https://github.com/root-de/slsa-github-generator/issues/358). If
+about your use case on [issue #358](https://github.com/jobroe10/slsa-github-generator/issues/358). If
 you have an issue in all other triggers please submit a [new
-issue](https://github.com/root-de/slsa-github-generator/issues/new/choose).
+issue](https://github.com/jobroe10/slsa-github-generator/issues/new/choose).
 
 ### Workflow Inputs
 
-The [container workflow](https://github.com/root-de/slsa-github-generator/blob/main/.github/workflows/generator_container_slsa3.yml) accepts the following inputs:
+The [container workflow](https://github.com/jobroe10/slsa-github-generator/blob/main/.github/workflows/generator_container_slsa3.yml) accepts the following inputs:
 
 Inputs:
 
@@ -181,7 +181,7 @@ The project generates SLSA provenance with the following values.
 
 | Name                         | Value                                                          | Description                                                                                                                                                                                                            |
 | ---------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `buildType`                  | `"https://github.com/root-de/slsa-github-generator@v1"` | Identifies a generic GitHub Actions build.                                                                                                                                                                             |
+| `buildType`                  | `"https://github.com/jobroe10/slsa-github-generator@v1"` | Identifies a generic GitHub Actions build.                                                                                                                                                                             |
 | `metadata.buildInvocationID` | `"[run_id]-[run_attempt]"`                                     | The GitHub Actions [`run_id`](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context) does not update when a workflow is re-run. Run attempt is added to make the build invocation ID unique. |
 
 ### Provenance Example
@@ -203,9 +203,9 @@ generated as an [in-toto](https://in-toto.io/) statement with a SLSA predicate.
   ],
   "predicate": {
     "builder": {
-      "id": "https://github.com/root-de/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@refs/tags/v1.1.1"
+      "id": "https://github.com/jobroe10/slsa-github-generator/.github/workflows/generator_container_slsa3.yml@refs/tags/v1.1.1"
     },
-    "buildType": "https://github.com/root-de/slsa-github-generator@v1",
+    "buildType": "https://github.com/jobroe10/slsa-github-generator@v1",
     "invocation": {
       "configSource": {
         "uri": "git+https://github.com/ianlewis/actions-test@refs/heads/main.git",
